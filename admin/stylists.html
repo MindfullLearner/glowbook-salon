@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stylists · GlowBook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="app-shell">
+    <div id="sidebar-placeholder"></div>
+    <main class="main-content">
+        <div class="page-header">
+            <div>
+                <h1>Stylists</h1>
+                <p class="page-subtitle">Add or remove the stylists clients can choose when booking.</p>
+            </div>
+        </div>
+
+        <div id="alert-box"></div>
+
+        <div class="two-col">
+            <div class="panel">
+                <div class="panel-header"><h2 id="form-title">Add new stylist</h2></div>
+                <form id="stylist-form">
+                    <input type="hidden" id="stylist_id" value="">
+
+                    <label for="name">Stylist name</label>
+                    <input type="text" id="name" required>
+
+                    <label for="specialty">Specialty</label>
+                    <input type="text" id="specialty" placeholder="e.g. Hair Colour Specialist">
+
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="is_active" checked>
+                        Active (available to clients)
+                    </label>
+
+                    <div>
+                        <button type="submit" class="btn-primary" id="submit-btn">Add stylist</button>
+                        <button type="button" class="btn-secondary" id="cancel-edit-btn" style="display:none;">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="panel">
+                <div class="panel-header"><h2>All stylists</h2></div>
+                <div id="stylists-container"><p class="loading-state">Loading...</p></div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script>window.API_BASE = '../api';</script>
+<script src="../js/api.js"></script>
+<script src="../js/layout.js"></script>
+<script src="../js/admin-stylists.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Overview · GlowBook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="app-shell">
+    <div id="sidebar-placeholder"></div>
+    <main class="main-content">
+        <div class="page-header">
+            <div>
+                <h1>Admin overview</h1>
+                <p class="page-subtitle">A snapshot of everything happening across the platform.</p>
+            </div>
+        </div>
+
+        <div class="stats-row" id="stats-row">
+            <div class="stat-box"><div class="stat-number">–</div><div class="stat-label">Total appointments</div></div>
+            <div class="stat-box"><div class="stat-number">–</div><div class="stat-label">Scheduled today</div></div>
+            <div class="stat-box"><div class="stat-number">–</div><div class="stat-label">Awaiting confirmation</div></div>
+            <div class="stat-box"><div class="stat-number">–</div><div class="stat-label">Total clients</div></div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-header">
+                <h2>Recent activity</h2>
+                <a href="appointments.html">View all</a>
+            </div>
+            <div id="recent-container"><p class="loading-state">Loading...</p></div>
+        </div>
+    </main>
+</div>
+
+<script>window.API_BASE = '../api';</script>
+<script src="../js/api.js"></script>
+<script src="../js/layout.js"></script>
+<script src="../js/admin-dashboard.js"></script>
+</body>
+</html>

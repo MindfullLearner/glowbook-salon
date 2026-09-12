@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manage Appointments · GlowBook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="app-shell">
+    <div id="sidebar-placeholder"></div>
+    <main class="main-content">
+        <div class="page-header">
+            <div>
+                <h1>All appointments</h1>
+                <p class="page-subtitle">Confirm, complete, or cancel bookings.</p>
+            </div>
+        </div>
+
+        <div id="alert-box"></div>
+
+        <div class="panel">
+            <form id="filter-form" class="filter-bar">
+                <input type="text" id="search" placeholder="Search by user or service...">
+                <select id="status-filter">
+                    <option value="">All statuses</option>
+                    <option value="pending">Pending</option>
+                    <option value="confirmed">Confirmed</option>
+                    <option value="cancelled">Cancelled</option>
+                    <option value="completed">Completed</option>
+                </select>
+                <button type="submit" class="btn-secondary">Filter</button>
+            </form>
+
+            <div id="appointments-container"><p class="loading-state">Loading...</p></div>
+        </div>
+    </main>
+</div>
+
+<script>window.API_BASE = '../api';</script>
+<script src="../js/api.js"></script>
+<script src="../js/layout.js"></script>
+<script src="../js/admin-appointments.js"></script>
+</body>
+</html>
