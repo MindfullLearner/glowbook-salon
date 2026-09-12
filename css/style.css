@@ -1,0 +1,274 @@
+/* ==========================================================
+   GlowBook — Salon Booking System — Design tokens
+   Deep wine/aubergine + rose gold, Fraunces headings / Inter body
+   ========================================================== */
+:root {
+    --wine: #3B2635;
+    --wine-light: #4F3346;
+    --rosegold: #C89B6B;
+    --rosegold-dark: #A9814F;
+    --blush: #F3E9E4;
+    --bg: #FBF8F6;
+    --ink: #2A2024;
+    --ink-soft: #7A6B70;
+    --border: #E8DDD8;
+    --white: #FFFFFF;
+    --danger: #C0463C;
+    --success: #3E7D52;
+    --radius: 10px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; font-weight: 600; margin: 0; }
+
+a { color: var(--rosegold-dark); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---------------- App shell (logged-in layout) ---------------- */
+.app-shell { display: flex; min-height: 100vh; }
+
+.sidebar {
+    width: 240px;
+    background: var(--wine);
+    color: #E3D3DA;
+    display: flex;
+    flex-direction: column;
+    padding: 28px 20px;
+    flex-shrink: 0;
+}
+
+.sidebar-brand {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    color: var(--white);
+    margin-bottom: 36px;
+    font-weight: 600;
+}
+.sidebar-brand span { color: var(--rosegold); }
+
+.sidebar-nav { display: flex; flex-direction: column; gap: 4px; flex: 1; }
+.sidebar-nav a {
+    color: #CBB3BE;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.sidebar-nav a:hover { background: var(--wine-light); text-decoration: none; color: var(--white); }
+.sidebar-nav a.active { background: var(--rosegold); color: var(--wine); }
+
+.sidebar-footer { border-top: 1px solid rgba(255,255,255,0.14); padding-top: 16px; margin-top: 16px; }
+.sidebar-user { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.avatar {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--rosegold); color: var(--wine);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-family: 'Fraunces', serif; flex-shrink: 0;
+}
+.sidebar-user-name { font-size: 13px; font-weight: 600; color: var(--white); }
+.sidebar-user-role { font-size: 11px; text-transform: capitalize; color: #C4A9B3; }
+.logout-link { font-size: 13px; color: #C4A9B3; cursor: pointer; }
+.logout-link:hover { color: var(--white); }
+
+.main-content { flex: 1; padding: 36px 44px; max-width: 1100px; }
+
+/* ---------------- Auth pages (login/register) ---------------- */
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(160deg, var(--wine) 0%, var(--wine) 45%, var(--bg) 45%);
+    padding: 20px;
+}
+
+.auth-card {
+    background: var(--white);
+    padding: 44px 40px;
+    border-radius: var(--radius);
+    box-shadow: 0 20px 50px rgba(59, 38, 53, 0.25);
+    width: 100%;
+    max-width: 420px;
+}
+
+.auth-brand { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 600; color: var(--wine); margin-bottom: 20px; }
+.auth-brand span { color: var(--rosegold-dark); }
+
+.auth-card h1 { font-size: 26px; margin-bottom: 6px; }
+.auth-subtitle { color: var(--ink-soft); margin: 0 0 24px; font-size: 14px; }
+.auth-switch { margin-top: 18px; font-size: 14px; text-align: center; color: var(--ink-soft); }
+.auth-hint { margin-top: 8px; font-size: 12px; text-align: center; color: var(--ink-soft); background: var(--blush); padding: 8px; border-radius: 6px; }
+
+/* ---------------- Forms ---------------- */
+form { display: flex; flex-direction: column; }
+label { font-size: 13px; font-weight: 600; margin: 14px 0 6px; color: var(--ink); }
+label:first-child { margin-top: 0; }
+.checkbox-label { flex-direction: row; align-items: center; gap: 8px; font-weight: 500; }
+.checkbox-label input { width: auto; }
+
+input[type="text"], input[type="email"], input[type="password"],
+input[type="date"], input[type="time"], input[type="number"],
+select, textarea {
+    padding: 11px 13px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    background: var(--white);
+    color: var(--ink);
+    width: 100%;
+}
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--rosegold);
+    box-shadow: 0 0 0 3px rgba(200, 155, 107, 0.2);
+}
+
+.hint { font-size: 12px; color: var(--ink-soft); margin-top: 4px; }
+
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    text-align: center;
+    padding: 11px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    font-family: inherit;
+}
+.btn-primary { background: var(--rosegold); color: var(--wine); }
+.btn-primary:hover { background: var(--rosegold-dark); text-decoration: none; }
+.btn-primary.small { padding: 7px 14px; margin-top: 0; font-size: 13px; }
+.btn-secondary { background: var(--white); color: var(--wine); border: 1px solid var(--border); margin-left: 8px; }
+.btn-secondary:hover { background: var(--blush); text-decoration: none; }
+
+.btn-link { font-size: 13px; font-weight: 600; margin-right: 10px; background: none; border: none; cursor: pointer; padding: 0; font-family: inherit; color: var(--rosegold-dark); }
+.btn-link.danger { color: var(--danger); }
+
+/* ---------------- Alerts ---------------- */
+.alert { padding: 13px 16px; border-radius: 8px; margin-bottom: 18px; font-size: 14px; }
+.alert ul { margin: 0; padding-left: 18px; }
+.alert-error { background: #FBEAE8; color: var(--danger); border: 1px solid #F0C6C1; }
+.alert-success { background: #E9F5EC; color: var(--success); border: 1px solid #C3E2CB; }
+
+/* ---------------- Page layout ---------------- */
+.page-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 28px; flex-wrap: wrap; gap: 12px; }
+.page-header h1 { font-size: 28px; }
+.page-subtitle { color: var(--ink-soft); margin: 6px 0 0; font-size: 14px; }
+
+.two-col { display: grid; grid-template-columns: 1fr 1.4fr; gap: 24px; align-items: start; }
+
+/* ---------------- Stat boxes ---------------- */
+.stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin-bottom: 28px; }
+.stat-box { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+.stat-number { font-family: 'Fraunces', serif; font-size: 32px; font-weight: 600; color: var(--wine); }
+.stat-label { font-size: 13px; color: var(--ink-soft); margin-top: 4px; }
+
+/* ---------------- Panels ---------------- */
+.panel { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; margin-bottom: 24px; }
+.panel-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+.panel-header h2 { font-size: 18px; }
+.panel-header a { font-size: 13px; font-weight: 600; }
+
+.empty-state { color: var(--ink-soft); font-size: 14px; padding: 20px 0; }
+.loading-state { color: var(--ink-soft); font-size: 14px; padding: 20px 0; }
+
+/* ---------------- Data table ---------------- */
+.data-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.data-table th {
+    text-align: left; padding: 10px 12px; font-size: 12px;
+    color: var(--ink-soft); border-bottom: 2px solid var(--border);
+    font-weight: 600;
+}
+.data-table td { padding: 12px; border-bottom: 1px solid var(--border); }
+.data-table tr:last-child td { border-bottom: none; }
+.muted { color: var(--ink-soft); font-size: 12px; }
+
+.actions-cell { white-space: nowrap; }
+
+/* ---------------- Badges ---------------- */
+.badge { padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; display: inline-block; }
+.badge-pending { background: #F6EBDD; color: var(--rosegold-dark); }
+.badge-confirmed { background: var(--blush); color: var(--wine); }
+.badge-cancelled { background: #FBEAE8; color: var(--danger); }
+.badge-completed { background: #E9F5EC; color: var(--success); }
+
+/* ---------------- Filter bar ---------------- */
+.filter-bar { flex-direction: row; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+.filter-bar input, .filter-bar select { width: auto; flex: 1; min-width: 160px; }
+.filter-bar button { margin-top: 0; }
+
+/* ---------------- Slot grid (booking page) ---------------- */
+.slot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 10px;
+    margin-top: 4px;
+}
+.slot-option { position: relative; margin: 0 !important; }
+.slot-option input { position: absolute; opacity: 0; }
+.slot-option span {
+    display: block;
+    text-align: center;
+    padding: 10px 6px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    background: var(--white);
+}
+.slot-option input:checked + span { background: var(--wine); color: var(--white); border-color: var(--wine); }
+.slot-option input:focus-visible + span { outline: 2px solid var(--rosegold); outline-offset: 2px; }
+
+/* ---------------- Stylist picker (booking page) ---------------- */
+.stylist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 10px;
+    margin-top: 4px;
+}
+.stylist-option { position: relative; margin: 0 !important; }
+.stylist-option input { position: absolute; opacity: 0; }
+.stylist-option span {
+    display: block;
+    text-align: left;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    background: var(--white);
+}
+.stylist-option .stylist-name { font-size: 14px; font-weight: 600; display: block; }
+.stylist-option .stylist-specialty { font-size: 12px; color: var(--ink-soft); display: block; margin-top: 2px; }
+.stylist-option input:checked + span { background: var(--blush); border-color: var(--rosegold); }
+.stylist-option input:checked + span .stylist-name { color: var(--wine); }
+
+/* ---------------- Reschedule inline form ---------------- */
+.reschedule-row { display: none; background: var(--blush); }
+.reschedule-row.open { display: table-row; }
+.reschedule-form { flex-direction: row; align-items: flex-end; gap: 14px; flex-wrap: wrap; }
+.reschedule-form label { display: flex; flex-direction: column; margin: 0; font-size: 12px; }
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 860px) {
+    .app-shell { flex-direction: column; }
+    .sidebar { width: 100%; flex-direction: row; align-items: center; padding: 14px 20px; }
+    .sidebar-nav { flex-direction: row; flex: none; overflow-x: auto; }
+    .sidebar-footer { display: none; }
+    .main-content { padding: 24px 20px; }
+    .two-col { grid-template-columns: 1fr; }
+    .auth-page { background: var(--bg); }
+}
