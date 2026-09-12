@@ -14,6 +14,9 @@ A full-stack **salon appointment booking system**, split cleanly into:
   system prevents double-booking the *same stylist* at the *same time*.
 - Sidebar/labels use salon language: "Clients" instead of "Users", etc.
 - Colour palette: deep wine/aubergine + rose gold — a beauty-salon look, not a generic SaaS template.
+- 
+## 🌐 Live Demo
+[GlowBook](https://glowbook.lovestoblog.com/login.html)
 
 ## How it works
 1. The browser loads a plain `.html` file (e.g. `dashboard.html`).
@@ -72,17 +75,7 @@ glowbook-salon/
    - Import → choose `database.sql` → Go
    - This creates `salon_booking_system` DB with 6 sample services and 4 sample stylists.
 
-4. **Fix the admin password hash** (hashes are tied to your PHP version):
-   - Visit `http://localhost/glowbook-salon/generate_password.php`
-   - Copy the printed hash
-   - In phpMyAdmin, edit the admin row in the `users` table and paste it into `password`
-   - Delete `generate_password.php` afterwards
-
-5. **Check DB credentials** in `api/config/db.php` (defaults: user `root`, empty password).
-
-6. **Open the app:** `http://localhost/glowbook-salon/`
-   - Admin: `admin@example.com` / `Admin@123`
-   - Or register as a new client.
+4. **Check DB credentials** in `api/config/db.php` (defaults: user `root`, empty password).
 
 ## API reference (for your report)
 
