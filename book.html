@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Appointment · GlowBook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app-shell">
+    <div id="sidebar-placeholder"></div>
+    <main class="main-content">
+        <div class="page-header">
+            <div>
+                <h1>Book an appointment</h1>
+                <p class="page-subtitle">Pick a service, a date, and a time that works for you.</p>
+            </div>
+        </div>
+
+        <div id="alert-box"></div>
+
+        <div class="panel">
+            <form id="book-form" novalidate>
+                <label for="service_id">Service</label>
+                <select id="service_id" name="service_id" required>
+                    <option value="">Loading services...</option>
+                </select>
+
+                <label>Preferred stylist (optional)</label>
+                <div class="stylist-grid" id="stylist-grid"></div>
+
+                <label for="appointment_date">Date</label>
+                <input type="date" id="appointment_date" name="appointment_date" required>
+
+                <label>Time slot</label>
+                <div class="slot-grid" id="slot-grid"></div>
+
+                <label for="notes">Notes (optional)</label>
+                <textarea id="notes" name="notes" rows="3" placeholder="Anything the provider should know beforehand?"></textarea>
+
+                <button type="submit" class="btn-primary">Confirm booking</button>
+            </form>
+        </div>
+    </main>
+</div>
+
+<script>window.API_BASE = 'api';</script>
+<script src="js/api.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/book.js"></script>
+</body>
+</html>

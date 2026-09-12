@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GlowBook</title>
+<script>window.API_BASE = 'api';</script>
+<script src="js/api.js"></script>
+</head>
+<body>
+<script>
+    (async () => {
+        const result = await apiCall('auth/me.php');
+        if (result.loggedIn) {
+            window.location.href = result.user.role === 'admin' ? 'admin/dashboard.html' : 'dashboard.html';
+        } else {
+            window.location.href = 'login.html';
+        }
+    })();
+</script>
+</body>
+</html>
